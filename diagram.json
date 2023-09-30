@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Divyansh Tripathi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 23.2,
+      "left": 164.3,
+      "attrs": { "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "rgb1:COM", "esp:GND.1", "black", [ "v0" ] ],
+    [ "rgb1:R", "esp:D18", "red", [ "v0" ] ],
+    [ "rgb1:G", "esp:D19", "green", [ "v0" ] ],
+    [ "rgb1:B", "esp:D21", "blue", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
